@@ -1,9 +1,7 @@
-// 4 de Junio de 2019
-// Arqui I UCC
-
 .text
 
 .global main
+
 main:
      MOV R4, #7
 
@@ -15,14 +13,8 @@ _delay:
      BNE delay
      MOV PC, LR
 
-done: NOP            // dummy instruction for breakpoint
-     BX LR          // return from main
+done: NOP
+     BX LR
 
 .data
-/*
-array:
-     .byte 0x08
-     .byte 0x10
-     .byte 0xFF
-*/
 .end
