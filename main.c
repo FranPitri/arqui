@@ -3,6 +3,7 @@
 #include "knight_rider_alg.h"
 #include "collision_alg.h"
 #include "snake_table.h"
+#include "newton_alg.h"
 #include <ncurses.h>
 
 #define PASSWORD "robin"
@@ -75,7 +76,7 @@ void menu() {
     printw("1. El auto fantasmón\n");
     printw("2. Paul Walker\n");
     printw("3. Snake\n");
-    printw("4. {}\n\n");
+    printw("4. El cosito de Newton\n\n");
     int selection = -1;
     while (selection < 0 || selection > 4) {
         printw("Seleccione un patrón: ");
@@ -94,7 +95,8 @@ void menu() {
             run(snake_pattern);
             break;
         default:
-            printw("4\n");
+            run(newton_pattern);
+            break;
     }
 
 }
