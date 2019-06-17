@@ -105,6 +105,7 @@ void run(void (*fn)()) {
     
     keypad(stdscr, TRUE);
     nodelay(stdscr, TRUE);
+    curs_set(0);
     
     clear();
     printw("Presione 'q' para volver al modo de selección.\n");
@@ -114,6 +115,8 @@ void run(void (*fn)()) {
 
     keypad(stdscr, FALSE);
     nodelay(stdscr, FALSE);
+    curs_set(1);
+    
     clear();
     menu();
 };
