@@ -1,7 +1,4 @@
-#include <stdio.h>
 #include "utils.h"
-
-void pattern();
 
 const unsigned char VALUES[] = {
     0x80, 
@@ -22,19 +19,17 @@ const unsigned char VALUES[] = {
     0x01, 
 };
 
-int main() {
-    printf("\e[?25l");
+void race_pattern() {
+    
     while (1) {
-        pattern();
-    }
-}
 
-void pattern() {
+        for (int i = 0; i<=15; i++) {
+            if (pattern_controls())
+                return;
+            output(VALUES[i]);
+            delay(global_speed);
+        }
 
-    for (int i = 0; i<=15; i++) {
-        output(VALUES[i]);
-        delay(500000);
-        //delay(50000000);
     }
 
 }

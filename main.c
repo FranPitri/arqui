@@ -1,7 +1,8 @@
 #include <string.h>
 #include "utils.h"
 #include "knight_rider_alg.h"
-#include "collision_table.h"
+#include "collision_alg.h"
+#include "snake_table.h"
 #include <ncurses.h>
 
 #define PASSWORD "robin"
@@ -73,7 +74,7 @@ void menu() {
     printw("0. Salir\n");
     printw("1. El auto fantasmón\n");
     printw("2. Paul Walker\n");
-    printw("3. {}\n");
+    printw("3. Snake\n");
     printw("4. {}\n\n");
     int selection = -1;
     while (selection < 0 || selection > 4) {
@@ -90,7 +91,7 @@ void menu() {
             run(collision_pattern);
             break;
         case 3:
-            printw("3\n");
+            run(snake_pattern);
             break;
         default:
             printw("4\n");
@@ -116,7 +117,7 @@ void run(void (*fn)()) {
     keypad(stdscr, FALSE);
     nodelay(stdscr, FALSE);
     curs_set(1);
-    
+
     clear();
     menu();
 };

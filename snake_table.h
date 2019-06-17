@@ -63,13 +63,17 @@ unsigned char VALUES[] = {
     0xFF, // 62
 };
 
-void worm_pattern();
-
-void worm_pattern(){
+void snake_pattern(){
+    
     while (1){
+        
         for(int i = 0; i < 63; i++){
+            if (pattern_controls())
+                return;
             output(VALUES[i]);
             delay(global_speed);
-        }   
+        }
+
     }
+
 }
