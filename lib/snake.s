@@ -9,20 +9,20 @@
 snake_pattern:
      PUSH {LR}
 _snake_init:
-     MOV R4, #0 ; counter
+     MOV R4, #0 // counter
 _snake_move:
      ADD R4, R4, #1
      LDR R5, =_VALUES
-     LDRB R5, [R5, R4] ; get the beginning of the list's address, and offset it by R4 bytes
+     LDRB R5, [R5, R4] // get the beginning of the list's address, and offset it by R4 bytes
      BL pattern_controls
-     CMP R0, #0 ; if pattern_controls
-     BNE _snake_out ; return
+     CMP R0, #0 // if pattern_controls
+     BNE _snake_out // return
      MOV R0, R5 
-     BL output ; output(values[r5])
+     BL output // output(values[r5])
      LDR R0, =global_speed
      LDR R0, [R0]
      BL delay
-     CMP R4, #60 ; table size
+     CMP R4, #60 // table size
      BEQ _snake_init
      B _snake_move
 _snake_out:
