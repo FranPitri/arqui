@@ -2,7 +2,7 @@
 #include "utils.h"
 #include "knight_rider_alg.h"
 #include "collision_alg.h"
-#include "snake_table.h"
+//#include "snake_table.h"
 #include "newton_alg.h"
 #include <ncurses.h>
 
@@ -17,6 +17,7 @@ int checkPassword(char *p) {
 int login();
 void menu();
 void run(void (*fn)());
+extern void snake_pattern();
 
 
 int main() {
