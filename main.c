@@ -21,6 +21,11 @@ extern void snake_pattern();
 
 
 int main() {
+    pioInit();
+    for (int i=0; i<8;i++){
+        pinMode(led[i], OUTPUT);
+    }
+
 
     initscr();
     
@@ -103,7 +108,6 @@ void menu() {
 }
 
 void run(void (*fn)()) {
-
     cbreak();
     noecho();
     
