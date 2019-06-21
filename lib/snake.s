@@ -3,7 +3,7 @@
 .extern global_speed
 .extern pattern_controls
 .extern output
-.extern delay
+.extern delayMillis
 .global snake_pattern
 
 snake_pattern:
@@ -21,7 +21,7 @@ _snake_move:
      BL output // output(values[r5])
      LDR R0, =global_speed
      LDR R0, [R0]
-     BL delay
+     BL delayMillis
      CMP R4, #60 // table size
      BEQ _snake_init
      B _snake_move

@@ -8,14 +8,14 @@ void kr_pattern() {
             if (pattern_controls())
                 return;
             output(1 << i);
-            delay(global_speed);
+            delayMillis(global_speed);
         }
 
         for (int i = 7; i>=0; i--) {
             if (pattern_controls())
                 return;
             output(1 << i);
-            delay(global_speed);
+            delayMillis(global_speed);
         }
         
     }

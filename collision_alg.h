@@ -8,14 +8,14 @@ void collision_pattern(){
             if (pattern_controls())
                 return;
            output(0x80 >> i | 0x01 << i);
-           delay(global_speed);
+           delayMillis(global_speed);
         }
 
         for(int i = 3; i >= 0; i--){
             if (pattern_controls())
                 return;
             output(0x01 << i | 0x80 >> i);
-            delay(global_speed);
+            delayMillis(global_speed);
         }   
     }
     

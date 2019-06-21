@@ -5,9 +5,9 @@
 #include <ncurses.h>
 #include "EasyPIO.h"
 
-unsigned int global_speed = 80000000;
-const unsigned int min_speed_cap = 130000000;
-const unsigned int max_speed_cap = 10000000;
+unsigned int global_speed = 500;
+const unsigned int min_speed_cap = 1000;
+const unsigned int max_speed_cap = 100;
 const char led[] = {7, 8, 25, 24, 23, 18, 15, 14};
 const char sw[] = {12, 16, 18, 20, 21};
 
@@ -57,11 +57,11 @@ int pattern_controls() {
             return 1;
         case KEY_UP:
             if (global_speed > max_speed_cap)
-                global_speed -= 10000000;
+                global_speed -= 100;
             break;
         case KEY_DOWN:
             if (global_speed < min_speed_cap)
-                global_speed += 10000000;
+                global_speed += 100;
             break;
     }
     return 0;
