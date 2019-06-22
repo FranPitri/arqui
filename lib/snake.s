@@ -7,7 +7,7 @@
 .global snake_pattern
 
 snake_pattern:
-     PUSH {LR}
+     PUSH {R4-R5, LR}
 _snake_init:
      MOV R4, #0 // counter
 _snake_move:
@@ -26,7 +26,7 @@ _snake_move:
      BEQ _snake_init
      B _snake_move
 _snake_out:
-     POP {PC}
+     POP {R4-R5, PC}
 
 .data
 

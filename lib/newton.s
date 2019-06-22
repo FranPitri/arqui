@@ -7,7 +7,7 @@
 .global newton_pattern
 
 newton_pattern:
-     PUSH {LR}
+     PUSH {R4-R7, LR}
 _newton_init:
      MOV R4, #0 // forwards counter
      MOV R5, #0 // backwards counter
@@ -55,7 +55,7 @@ _newton_move_backwards:
      BNE _newton_move_backwards
      B _newton_init
 _newton_out:
-     POP {PC}
+     POP {R4-R7, PC}
 
 _modulo:
      SUB R2, R0, R1
