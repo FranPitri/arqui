@@ -3,7 +3,7 @@
 #include "knight_rider_alg.h"
 #include "collision_alg.h"
 //#include "snake_table.h"
-#include "newton_alg.h"
+//#include "newton_alg.h"
 #include <ncurses.h>
 
 #define PASSWORD "robin"
@@ -18,6 +18,7 @@ int login();
 void menu();
 void run(void (*fn)());
 extern void snake_pattern();
+extern void newton_pattern();
 
 
 int main() {

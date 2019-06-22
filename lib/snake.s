@@ -22,7 +22,7 @@ _snake_move:
      LDR R0, =global_speed
      LDR R0, [R0]
      BL delayMillis
-     CMP R4, #60 // table size
+     CMP R4, #64 // table size
      BEQ _snake_init
      B _snake_move
 _snake_out:
@@ -86,6 +86,10 @@ _VALUES:
 .byte   -2
 .byte   -2
 .byte   -2
+.byte   -1
+.byte   0
+.byte   0
+.byte   -1
 .byte   -1
 .byte   0
 .byte   0
