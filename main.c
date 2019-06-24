@@ -11,7 +11,11 @@
 #define ATTEMPS_ALLOWED 3
 
 int checkPassword(char *p) {
-    return strcmp(p, PASSWORD) == 0 ? 1 : 0;
+    for (int i = 0; i < PASSWORD_LENGTH; i++) {
+        if (p[i] != PASSWORD[i])
+            return 0;
+    }
+    return 1;
 }
 
 int login();
