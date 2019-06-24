@@ -51,9 +51,15 @@ void output(unsigned char c) {
     move(rows, 0);
 }
 
+void clear_leds() {
+    for (int i = 0; i < 8; i++)
+        digitalWrite(led[i], 1);
+}
+
 int pattern_controls() {
     switch (getch()) {
         case 'q':
+            clear_leds();
             return 1;
         case KEY_UP:
             if (global_speed > max_speed_cap)
